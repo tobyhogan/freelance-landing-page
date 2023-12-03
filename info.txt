@@ -1,1 +1,10 @@
-docs contains the static site usable by gh pages
+- docs contains the static site usable by gh pages
+
+
+
+local:
+- tried opening site files copied from the gh repo using local on the win11 pc, didn't work
+- opened the same site files(for tobyhogan-space on my laptop macosx and it did work ), although not sure why
+    - perhaps local is too local and some files are only stored on machine?
+
+
