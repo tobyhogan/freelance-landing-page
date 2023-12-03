@@ -48,4 +48,3 @@
 2023/08/06 20:35:58 [emerg] 5554#0: still could not bind()
 2023/08/08 20:02:36 [alert] 3016#0: *4303 setsockopt(TCP_NODELAY) failed (22: Invalid argument) while keepalive, client: 127.0.0.1, server: 0.0.0.0:10006
 2023/08/08 20:28:42 [alert] 3016#0: *4807 setsockopt(TCP_NODELAY) failed (22: Invalid argument) while keepalive, client: 127.0.0.1, server: 0.0.0.0:10006
-2023/09/30 09:37:23 [alert] 12260#23872: OpenEvent("ngx_master_27408") failed (2: The system cannot find the file specified)

@@ -8,3 +8,6 @@ local:
     - perhaps local is too local and some files are only stored on machine?
 
 
+-> I got it to work by exporting the site when it was working from the laptop through local, then importing it through local on the desktop
+
+

@@ -50,3 +50,7 @@ Stack trace:
 [27-Sep-2023 01:29:22 UTC] Cron reschedule event error for hook: nf_marketing_feed_cron, Error code: invalid_schedule, Error message: Event schedule does not exist., Data: {"schedule":"nf-weekly","args":[],"interval":604800}
 [27-Sep-2023 01:29:22 UTC] Cron reschedule event error for hook: nf_weekly_promotion_update, Error code: invalid_schedule, Error message: Event schedule does not exist., Data: {"schedule":"nf-weekly","args":[],"interval":604800}
 [27-Sep-2023 01:29:28 UTC] Cron reschedule event error for hook: nf_optin_cron, Error code: invalid_schedule, Error message: Event schedule does not exist., Data: {"schedule":"nf-monthly","args":[],"interval":2678400}
+[03-Dec-2023 14:52:11 UTC] PHP Warning:  Undefined array key "url" in /Users/KaizenTech/Desktop/coding/tobyhogan-space/dynamic-non-live-site/app/public/wp-content/plugins/wpforms-lite/src/Forms/IconChoices.php on line 127
+[03-Dec-2023 14:52:11 UTC] PHP Warning:  Undefined array key "path" in /Users/KaizenTech/Desktop/coding/tobyhogan-space/dynamic-non-live-site/app/public/wp-content/plugins/wpforms-lite/src/Forms/IconChoices.php on line 128
+[03-Dec-2023 15:28:34 UTC] WPMDB Find & Replace skipped: {"table":"wp_options","primary_key":"1454","column":"option_value","contains_match":false,"option_name":"astra_partials_config_cache"}
+[03-Dec-2023 15:38:10 UTC] WPMDB Find & Replace skipped: {"table":"wp_options","primary_key":"1454","column":"option_value","contains_match":false,"option_name":"astra_partials_config_cache"}
