@@ -174,7 +174,7 @@ class Options {
 
 		switch ( $this->get( 'destination_url_type' ) ) {
 			case 'absolute':
-				return $this->get( 'destination_scheme' ) . $this->get( 'destination_host' );
+				return untrailingslashit( $this->get( 'destination_scheme' ) . $this->get( 'destination_host' ) );
 				break;
 			case 'relative':
 				return $this->get( 'relative_path' );
@@ -182,4 +182,17 @@ class Options {
 
 		return './';
 	}
+
+    /**
+     * Add status message
+     * @param $message
+     * @param $task_name
+     * @return $this
+     */
+    public function add_status_message( $message, $task_name ) : self
+    {
+        $messages = $this->get( 'archive_status_messages' );
+        $messages = Util::add_archive_status_message( $messages, $task_name, $message );
+        return $this->set( 'archive_status_messages', $messages );
+    }
 }

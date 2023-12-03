@@ -11,3 +11,8 @@ local:
 -> I got it to work by exporting the site when it was working from the laptop through local, then importing it through local on the desktop
 
 
+
+simplystatic / static site exporting:
+- how to make it get formatted properly?
+
+

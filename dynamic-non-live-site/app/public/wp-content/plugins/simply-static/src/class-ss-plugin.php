@@ -59,6 +59,11 @@ class Plugin {
 	 */
 	protected $page_handlers = null;
 
+	/**
+	 * @var null|\Simply_Static\Integrations
+	 */
+	protected $integrations = null;
+
 
 	/**
 	 * Return an instance of the Simply Static plugin
@@ -84,8 +89,8 @@ class Plugin {
 			// Maybe clear local directory.
 			add_action( 'ss_after_setup_task', array( self::$instance, 'maybe_clear_directory' ) );
 
-			$integrations = new Integrations();
-			$integrations->load();
+			self::$instance->integrations = new Integrations();
+			self::$instance->integrations->load();
 
 			self::$instance->options              = Options::instance();
 			self::$instance->view                 = new View();
@@ -103,6 +108,17 @@ class Plugin {
 		}
 
 		return self::$instance;
+	}
+
+	public function get_integration( $integration ) {
+		$integrations = $this->integrations->get_integrations();
+		if ( empty( $integrations[ $integration ] ) ) {
+			return null;
+		}
+
+		$class = $integrations[ $integration ];
+
+		return new $class();
 	}
 
 	/**
@@ -126,6 +142,7 @@ class Plugin {
 		require_once $path . 'src/tasks/class-ss-create-zip-archive.php';
 		require_once $path . 'src/tasks/class-ss-wrapup-task.php';
 		require_once $path . 'src/tasks/class-ss-cancel-task.php';
+		require_once $path . 'src/tasks/class-ss-generate-404-task.php';
 		require_once $path . 'src/handlers/class-ss-page-handler.php';
 		require_once $path . 'src/class-ss-query.php';
 		require_once $path . 'src/models/class-ss-model.php';
@@ -276,11 +293,30 @@ class Plugin {
 	 * @return array
 	 */
 	public function add_http_filters( $parsed_args, $url ) {
+		// Check for Basic Auth credentials.
 		if ( strpos( $url, get_bloginfo( 'url' ) ) !== false ) {
 			$digest = self::$instance->options->get( 'http_basic_auth_digest' );
 
 			if ( $digest ) {
 				$parsed_args['headers']['Authorization'] = 'Basic ' . $digest;
+			}
+		}
+
+		// Check for Freemius.
+		if ( false === strpos( $url, '://api.freemius.com' ) ) {
+			return $parsed_args;
+		}
+
+		if ( empty( $parsed_args['headers'] ) ) {
+			return $parsed_args;
+		}
+
+		foreach ( $parsed_args['headers'] as $key => $value ) {
+			if ( 'Authorization' === $key ) {
+				$parsed_args['headers']['Authorization2'] = $value;
+			} else if ( 'Authorization2' === $key ) {
+				$parsed_args['headers']['Authorization'] = $value;
+				unset($parsed_args['headers'][$key]);
 			}
 		}
 
@@ -297,6 +333,13 @@ class Plugin {
 	 */
 	public function filter_task_list( $task_list, $delivery_method ): array {
 		array_push( $task_list, 'setup', 'fetch_urls' );
+
+		$generate_404 = $this->options->get('generate_404');
+
+		// Add 404 task
+		if ( $generate_404 ) {
+			$task_list[] = 'generate_404';
+		}
 
 		if ( 'zip' === $delivery_method ) {
 			$task_list[] = 'create_zip_archive';

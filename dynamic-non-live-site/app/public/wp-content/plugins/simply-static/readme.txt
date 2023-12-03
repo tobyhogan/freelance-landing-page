@@ -1,10 +1,10 @@
 === Simply Static ===
 Contributors: patrickposner
 Tags: HTML, static website generator, static site, secure, fast
-Requires at least: 5.4
-Tested up to: 6.2
+Requires at least: 6.3
+Tested up to: 6.4
 Requires PHP: 7.4
-Stable tag: 3.0.4
+Stable tag: 3.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -140,6 +140,21 @@ We can even minify inline CSS & JavaScript.
 
 You can get the pro version [here](https://simplystatic.com/simply-static-pro/).
 
+== webtozip ==
+
+We also developed a service called [webtozip.com](https://webtozip.com/).
+
+If all you need is an archive of an existing WordPress website and you don't want to switch to a static site setup, we highly recommend using it instead of Simply Static.
+
+Here are the benefits:
+
+* it runs remotely (not on your server)
+* it is probably faster than running it on your own server
+* you don't have to worry about your WordPress version or your PHP version
+* you get the download link to the ZIP file via e-mail (no need for writing access on your server)
+
+It uses the same codebase as Simply Static but is not a plugin. It is a service that runs on our servers.
+
 = Tutorials =
 
 I publish new tutorials on how to work with Simply Static and other tools on my blog.
@@ -206,6 +221,70 @@ Simply Static creates a static copy of your WordPress site that is intended to b
 3. Diagnostics
 
 == Changelog ==
+
+= 3.1.3 =
+
+* JS dependencies updated
+* refactored filter implementation for tasks
+* added check for empty strings in excludes
+* removed unused blog_id check
+* changed location of debug log to uploads dir
+* check for Rest API in diagnostics
+* increased PHP version for diagnostics >= 8.0
+* whitelist Freemius API calls if Basic Auth enabled
+
+= 3.1.2 =
+
+* WordPress 6.4 compatibility
+* Improved clearing logs
+* improved capability filter
+
+= 3.1.1 =
+
+* improved admin UI descriptions in general settings
+* added support for 404 pages
+* added error message to WP_Error when archive dir cannot be created
+* added add_status_message method to Simply_Static\Options for WP CLI handling
+
+= 3.1.0 =
+
+* fix for scheme/host when resetting settings
+* enhanced integration setups (GitHub objects)
+* fixed example for relative path setups in settings
+
+
+= 3.0.9 =
+
+* PHP 8.2 support improved
+* wp_parse_url instead of just parse_url for fetching URLs
+* enhanced default options
+* increased min WP version
+
+= 3.0.8 =
+
+* SimplyCDN auto include files
+* min WP version increased to 6.2
+* improved wording for progress in export log
+* improved Basic Auth handling
+* improved absolute URL replacement
+* Elementor integration: prevent replacing non strings in HTML
+
+
+= 3.0.7 =
+
+* SimplyCDN setting now in React Admin UI
+* filter for capabilities in Rest routes
+* SimplyCDN improvements for webhook handling
+
+
+= 3.0.6 =
+
+* removed type hints in Rest API abstraction for PHP 7.4 support
+* make sure we only trigger maybe_wp_die() if there is an error on export
+
+= 3.0.5 =
+
+* fixed incompatibility with EWWW image optimizer
 
 = 3.0.4 =
 
