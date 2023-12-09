@@ -50,3 +50,6 @@
 [2023-12-03 17:05:27] [class-ss-task.php:44] Status message: [fetch_urls] Fetched 47 of 49 pages/files
 [2023-12-03 17:05:27] [class-ss-archive-creation-job.php:178] We're not done with the fetch_urls task yet
 [2023-12-04 09:25:13] [class-ss-url-fetcher.php:251] Fetching URL: http://localhost:10077
+[2023-12-09 17:28:20] [class-ss-archive-creation-job.php:133] Current task: setup
+[2023-12-09 17:28:20] [class-ss-archive-creation-job.php:150] Performing task: setup
+[2023-12-09 17:28:20] [class-ss-task.php:44] Status message: [setup] Setting up
