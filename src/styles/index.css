@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    font-family: "Nunito", sans-serif;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+
+
+  .Link1 {
+    font-size: 25px;
+  }
+
+  .ToggleNav {
+    display: auto;
+  }
+
+  .FullNav {
+    display: none;
+  }
+
+
+  header .Link2 {
+    font-size: 18px;
+    margin: 7px 0 0 0;
+    
+
+  }
+
+
+  .ThemeToggler {
+    margin-top: 16px;
+    margin-right: 8vw;
+  }
+
+  img {
+    width: 300px;
+  }
+
+
+}
+
+@media only screen and (min-width: 801px) {
+
+  .Link1 {
+    font-size: 35px;
+  }
+
+
+  .ToggleNav {
+    display: none;
+  }
+
+  .FullNav {
+    display: auto;
+
+  }
+
+  
+  header .Link2 {
+    margin: 0 30px 26px 0;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+
+  .ThemeToggler {
+    margin-top: 25px;
+    margin-right: 4vw;
+  }
+
+
+
+  img {
+    width: 400px;
+  }
+
+
+}
+
+
+
+
+.light {
+
+  header {
+
+    background-color: rgb(198, 198, 218);
+
+  }
+
+  
+  main {
+    
+    background-color: rgb(226, 226, 230);
+    
+  }
+  
+  footer {
+    background-color: rgb(217, 217, 224);
+  }
+
+
+  h1, h2, h3, p, li, a {
+
+    color: rgb(0, 0, 0);
+
+  }
+
+
+  header .Link1, header .Link2, header .Other {
+    color: black;
+  }
+
+
+}
+
+.dark {
+
+  header {
+
+    background-color: rgb(48, 48, 78);
+
+  }
+
+  footer {
+    
+    background-color: rgb(102, 102, 124);
+
+  }
+
+  main {
+
+    background-color: rgb(113, 113, 136);
+
+  }
+
+  h1, h2, h3, p, li, a {
+
+    color: white;
+
+  }
+
+  
+
+  header .Link1, header .Link2, header .Other {
+    color: white;
+  }
+
+  .Button1 {
+
+    color: white;
+    border: 1px solid white;
+    width: fit-content;
+    padding: 2px 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    
+  }
+
+}
+
+
+h1 {
+  text-align: center;
+}
+
+
+h2 {
+  text-align: center;
+  font-size: large;
+}
+
+
+h3 {
+  text-align: center;
+  font-size: medium;
+}
+
+
+
+
+img {
+  border-radius: 8px;
+  margin: 0 auto 8px auto;
+}
+
+
+
+
+main ul li {
+  font-weight: 400;
+}
+
+.Unselectable {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}

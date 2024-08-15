@@ -1,1 +1,0 @@
-- Some sections that are no longer in use are located in a page called [[ ARCHIVE ]], that's accessible from the wordpress menu in settings
