@@ -27,7 +27,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <Header />
       <main className="">
         <img src={tablescreenshot} className="border-2 border-slate-300 dark:border-slate-600 mt-12 rounded-lg"></img>
-        <h1 className="text-center mt-8 text-2xl">Headline Goes Here</h1>
+        <h1 className="text-center mt-8 text-2xl">Freelancing & Consulting</h1>
         <div className="flex flex-col mx-auto w-fit mt-8">
           <a className='rounded-md py-2 px-5 text-white bg-slate-500 dark:bg-slate-600 hover:bg-slate-400 dark:hover:bg-slate-700 hover:cursor-pointer'>Action Button</a>
           <a href="https://habit-tracker-indol-ten.vercel.app/" className="mt-4 underline text-blue-400 mx-auto">Alternate Action</a>
