@@ -21,8 +21,7 @@ function Header() {
   const navList = 
     <>
 
-      <Link to="/demos" className="Link2 hover:underline">Feature Demos</Link>    
-      <Link to="/hashdemo" className="Link2 hover:underline">URL Hash Demo</Link>    
+ 
       <Link to="/page1" className="Link2 hover:underline">Page 1</Link>
       <Link to="/page2" className="Link2 hover:underline">Page 2</Link>
 
