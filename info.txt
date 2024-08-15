@@ -18,3 +18,4 @@ simplystatic / static site exporting:
 --> ok so it seems that when you export from sipmlystatic, then open the html file on my machine it's corrupted, but when gh pages serves that index.html page it seems fine tbh
 
 
+
